@@ -16,10 +16,10 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(16,GPIO.IN)
 
 # Software SPI configuration (for MCP3008):
-CLK = 11
-MISO = 9
-MOSI = 10
-CS = 8
+CLK = 22
+MISO = 27
+MOSI = 17
+CS = 23
 mcp = Adafruit_MCP3008.MCP3008(clk=CLK, cs=CS, miso=MISO, mosi=MOSI)
 
 #DHT Humidity sensor config
