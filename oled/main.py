@@ -168,6 +168,8 @@ try:
         OLED.Delay(2000)
 
         while (True):
+            Test_Text()
+            OLED.Delay(2000)
             Display_Picture("picture1.jpg")
             OLED.Delay(2000)
             Display_Picture("picture2.jpg")
