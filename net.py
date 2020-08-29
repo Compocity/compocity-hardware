@@ -1,7 +1,7 @@
 import requests
 
 # url = 'https://jsonplaceholder.typicode.com/posts/1'
-url = 'https://us-central1-compocity-e650d.cloudfunctions.net/helloWorld'
+url = 'https://us-central1-compocity-e650d.cloudfunctions.net/api'
 # myobj = {'somekey': 'somevalue'}
 
 r = requests.get(url)
