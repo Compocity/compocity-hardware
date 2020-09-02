@@ -48,7 +48,7 @@ hx.tare()
 print("Tare done! Add weight now...")
 
 # to use both channels, you'll need to tare them both
-hx.tare_A()
+#hx.tare_A()
 #hx.tare_B()
 
 while True:
@@ -70,7 +70,7 @@ while True:
        	#val_A = hx.get_weight_A(5)
 	#print(val_A)
         #val_B = hx.get_weight_B(5)
-        #print "A: %s  B: %s" % ( val_A, val_B )
+        #print("A: {}%s  B: {}%s".format( val_A, val_B ))
 
         hx.power_down()
         hx.power_up()
