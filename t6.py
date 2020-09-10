@@ -21,13 +21,14 @@ import Adafruit_GPIO.SPI as SPI
 import Adafruit_MCP3008
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(16,GPIO.IN)
+GPIO.setup(19,GPIO.IN)
+GPIO.setup(26,GPIO.OUT)
 
 # Software SPI configuration (for MCP3008):
-CLK = 22
+CLK = 17
 MISO = 27
-MOSI = 17
-CS = 23
+MOSI = 22
+CS = 9
 mcp = Adafruit_MCP3008.MCP3008(clk=CLK, cs=CS, miso=MISO, mosi=MOSI)
 
 #DHT Humidity sensor config
@@ -214,7 +215,7 @@ try:
     ready_text()
     while True:
         #-------------OLED Init------------#
-        if(GPIO.input(16)):
+        if(GPIO.input(19)):
             # OLED.Device_Init()
             # Test_Text()
             print('Welcome')
@@ -235,7 +236,9 @@ try:
             hx.power_up()
 
             sensor_text("Temperature={}C".format(temp_data),"Humidity={}%".format(humidity_data),"Nedvesseg={}%".format(analog_data[0]),"Teatartaly={}%".format(analog_data[1]),'Suly={}g'.format(abs(val)))
-            
+            GPIO.output(26,1)
+            time.sleep(1)
+            GPIO.output(26,0)
             data = {'id': 'hQInG0anTzSv6n6DZt1E', 'temperature': temp_data, 'humidity': humidity_data,
                     'moisture': analog_data[0], 'tea': analog_data[1], 'weight': abs(val) }
             url = 'https://us-central1-compocity-e650d.cloudfunctions.net/api/data'
