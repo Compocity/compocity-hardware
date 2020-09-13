@@ -271,7 +271,7 @@ class HX711:
 
         if self.DEBUG_PRINTING:
             print("Tare A value:", value)
-        
+        print("Tare A value",value) 
         self.set_offset_A(value)
 
         # Restore the reference unit, now that we've got our offset.
